@@ -1,0 +1,8 @@
+PostgreSQL:
+  image: sameersbn/postgresql:9.5
+  ports:
+    - "5432:5432"
+  environment:
+    - DEBUG=false
+    - PG_TRUST_LOCALNET=true
+    - PG_PASSWORD=silverlight
