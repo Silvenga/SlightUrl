@@ -1,5 +1,6 @@
 ﻿namespace SlightUrl.Components.Tests.Commands
 {
+    using System;
     using System.Threading.Tasks;
 
     using Effort;
@@ -9,7 +10,9 @@
     using Ploeh.AutoFixture;
 
     using SlightUrl.Components.Commands;
+    using SlightUrl.Components.Validations;
     using SlightUrl.Data;
+    using SlightUrl.Data.Entities;
 
     using Xunit;
 
@@ -60,11 +63,26 @@
         }
 
         [Fact]
-        public async Task Creating_duplicate_alias_should_fail()
+        public void Creating_duplicate_alias_should_fail()
         {
+            var existing = AutoFixture.Build<ShortenedLink>()
+                                       .Without(x => x.Id)
+                                       .Create();
+            existing.Alias = existing.Alias.ToLower();
+            _context.ShortenedLinks.Add(existing);
+            _context.SaveChanges();
+
+            CreateShortUrl.Command input = new CreateShortUrl.Command
+            {
+                Alias = existing.Alias,
+                LongUrl = existing.Url
+            };
+
             // Act
+            Action action = () => _command.HandleAsync(input).Wait();
 
             // Assert
+            action.ShouldThrow<SlightValidationException>();
         }
     }
 }

@@ -2,8 +2,10 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Linq;
     using System.Threading.Tasks;
 
+    using SlightUrl.Components.Validations;
     using SlightUrl.Data;
     using SlightUrl.Data.Entities;
 
@@ -45,6 +47,12 @@
                 Alias = command.Alias?.ToLower(),
                 Url = command.LongUrl
             };
+
+            var aliasExists = _context.ShortenedLinks.Any(x => x.Alias == shortenedUrl.Alias);
+            if (aliasExists)
+            {
+                throw new SlightValidationException("command.alias", "Alias already exists.");
+            }
 
             _context.ShortenedLinks.Add(shortenedUrl);
             await _context.SaveChangesAsync();

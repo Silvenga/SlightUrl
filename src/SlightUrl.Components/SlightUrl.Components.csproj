@@ -51,7 +51,7 @@
   <ItemGroup>
     <Compile Include="Commands\CreateShortUrl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validations\ValidationException.cs" />
+    <Compile Include="Validations\SlightValidationException.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SlightUrl.Data\SlightUrl.Data.csproj">

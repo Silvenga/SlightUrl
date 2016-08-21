@@ -14,7 +14,7 @@
     {
         public override Task HandleAsync(ExceptionHandlerContext context, CancellationToken cancellationToken)
         {
-            var validationException = (ValidationException) context.Exception;
+            var validationException = (SlightValidationException) context.Exception;
 
             var modeState = new ModelStateDictionary();
             modeState.AddModelError(validationException.PropertyName, validationException.ErrorMessage);
@@ -26,7 +26,7 @@
 
         public override bool ShouldHandle(ExceptionHandlerContext context)
         {
-            if (context.Exception is ValidationException)
+            if (context.Exception is SlightValidationException)
             {
                 return true;
             }
