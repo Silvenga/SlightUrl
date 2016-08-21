@@ -36,6 +36,10 @@
 
         public async Task<Result> HandleAsync(Command command)
         {
+            if (command == null)
+            {
+                throw new SlightValidationException("", "Command must have value.");
+            }
             var shortenedUrl = new ShortenedLink
             {
                 Alias = command.Alias?.ToLower(),

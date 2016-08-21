@@ -30,9 +30,8 @@
                                        .PostAsync();
 
             // Assert
-
-            result.StatusCode.Should().Be(HttpStatusCode.BadRequest);
             _helper.WriteLine(await result.Content.ReadAsStringAsync());
+            result.StatusCode.Should().Be(HttpStatusCode.BadRequest);
         }
 
         public void Dispose()
