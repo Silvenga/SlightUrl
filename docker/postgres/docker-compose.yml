@@ -1,4 +1,4 @@
-PostgreSQL:
+PostgreSQL-SlightUrl:
   image: sameersbn/postgresql:9.5
   ports:
     - "5432:5432"
