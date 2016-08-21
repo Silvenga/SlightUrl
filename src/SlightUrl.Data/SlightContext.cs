@@ -34,14 +34,28 @@
 
         public override int SaveChanges()
         {
-            PreSave();
-            return base.SaveChanges();
+            try
+            {
+                PreSave();
+                return base.SaveChanges();
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken)
         {
-            PreSave();
-            return base.SaveChangesAsync(cancellationToken);
+            try
+            {
+                PreSave();
+                return base.SaveChangesAsync(cancellationToken);
+            }
+            catch (Exception e)
+            {
+                throw;
+            }
         }
 
         private void PreSave()

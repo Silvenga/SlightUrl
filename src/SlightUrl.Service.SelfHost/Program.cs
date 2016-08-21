@@ -11,8 +11,7 @@
             const string baseAddress = "http://localhost:9900/";
 
             Console.WriteLine("Starting OWIN.");
-
-            // Start OWIN host 
+            
             using (WebApp.Start<Startup>(baseAddress))
             {
                 Console.WriteLine($"Ready on {baseAddress}");

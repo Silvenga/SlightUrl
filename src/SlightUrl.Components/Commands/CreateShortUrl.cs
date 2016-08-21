@@ -36,21 +36,16 @@
 
         public async Task<Result> HandleAsync(Command command)
         {
-            if (command == null)
-            {
-                throw new SlightValidationException("command", "Command must have value.");
-            }
-
             var shortenedUrl = new ShortenedLink
             {
                 Alias = command.Alias?.ToLower(),
                 Url = command.LongUrl
             };
 
-            var aliasExists = _context.ShortenedLinks.Any(x => x.Alias == shortenedUrl.Alias);
+            var aliasExists = _context.ShortenedLinks.Where(x => x.Alias != null).Any(x => x.Alias == shortenedUrl.Alias);
             if (aliasExists)
             {
-                throw new SlightValidationException("command.alias", "Alias already exists.");
+                throw new SlightValidationException("alias", "Alias already exists.");
             }
 
             _context.ShortenedLinks.Add(shortenedUrl);
