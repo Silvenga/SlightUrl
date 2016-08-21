@@ -58,5 +58,13 @@
             var url = _context.ShortenedLinks.Find(result.CreatedId);
             url.Alias.Should().Be(input.Alias.ToLower());
         }
+
+        [Fact]
+        public async Task Creating_duplicate_alias_should_fail()
+        {
+            // Act
+
+            // Assert
+        }
     }
 }

@@ -2,14 +2,14 @@ namespace SlightUrl.Data.Postgres.Migrations
 {
     using System.Data.Entity.Migrations;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SlightUrl.Data.Postgres.PostgresSlightContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<PostgresSlightContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(SlightUrl.Data.Postgres.PostgresSlightContext context)
+        protected override void Seed(PostgresSlightContext context)
         {
             //  This method will be called after migrating to the latest version.
 

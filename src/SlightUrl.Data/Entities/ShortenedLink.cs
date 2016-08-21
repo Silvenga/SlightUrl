@@ -10,7 +10,7 @@
     {
         public int Id { get; set; }
 
-        [Index]
+        [Index(IsUnique = true)]
         public string Alias { get; set; }
 
         [Required, Index]

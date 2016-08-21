@@ -29,7 +29,7 @@
 
         public virtual void Migrate()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public override int SaveChanges()
