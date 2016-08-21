@@ -27,7 +27,6 @@
         public AuditableEntityFacts()
         {
             var connection = DbConnectionFactory.CreateTransient();
-
             _context = new AuditableSlightContext(connection);
         }
 

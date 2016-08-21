@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8ADC4287-0A28-4C1F-A924-B9B6EC398DD2}</ProjectGuid>
+    <ProjectGuid>{509F95F6-A491-4297-B03E-D20BFC95AD28}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SlightUrl.Data.Tests</RootNamespace>
-    <AssemblyName>SlightUrl.Data.Tests</AssemblyName>
+    <RootNamespace>SlightUrl.Components.Tests</RootNamespace>
+    <AssemblyName>SlightUrl.Components.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -73,7 +73,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="xunit.abstractions, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\xunit.abstractions.2.0.1\lib\net35\xunit.abstractions.dll</HintPath>
+      <HintPath>..\..\packages\xunit.abstractions.2.0.0\lib\net35\xunit.abstractions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="xunit.assert, Version=2.1.0.3179, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
@@ -90,7 +90,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuditableEntityFacts.cs" />
+    <Compile Include="Commands\CreateShortUrlFacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +98,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\src\SlightUrl.Components\SlightUrl.Components.csproj">
+      <Project>{E0FE5043-E16A-4147-82F9-742686DA01E2}</Project>
+      <Name>SlightUrl.Components</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\SlightUrl.Data\SlightUrl.Data.csproj">
       <Project>{03AA55EB-1564-4651-B6D0-2C2D22B30F6D}</Project>
       <Name>SlightUrl.Data</Name>
