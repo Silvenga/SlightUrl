@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlightUrl.Components", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlightUrl.Components.Tests", "tests\SlightUrl.Components.Tests\SlightUrl.Components.Tests.csproj", "{509F95F6-A491-4297-B03E-D20BFC95AD28}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlightUrl.Service.Tests", "tests\SlightUrl.Service.Tests\SlightUrl.Service.Tests.csproj", "{D206BFFF-EE8E-43FD-AF22-8289A383163E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlightUrl.Service.SelfHost", "src\SlightUrl.Service.SelfHost\SlightUrl.Service.SelfHost.csproj", "{4063F451-1A7A-499F-B570-F40448F83A1F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +53,14 @@ Global
 		{509F95F6-A491-4297-B03E-D20BFC95AD28}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{509F95F6-A491-4297-B03E-D20BFC95AD28}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{509F95F6-A491-4297-B03E-D20BFC95AD28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D206BFFF-EE8E-43FD-AF22-8289A383163E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D206BFFF-EE8E-43FD-AF22-8289A383163E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D206BFFF-EE8E-43FD-AF22-8289A383163E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D206BFFF-EE8E-43FD-AF22-8289A383163E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4063F451-1A7A-499F-B570-F40448F83A1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4063F451-1A7A-499F-B570-F40448F83A1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4063F451-1A7A-499F-B570-F40448F83A1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4063F451-1A7A-499F-B570-F40448F83A1F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,5 +72,7 @@ Global
 		{8ADC4287-0A28-4C1F-A924-B9B6EC398DD2} = {1D54FBEE-A843-4077-A721-BE5E5DB55340}
 		{E0FE5043-E16A-4147-82F9-742686DA01E2} = {61E70374-8FC7-4B3D-954D-5E8AA62C68FA}
 		{509F95F6-A491-4297-B03E-D20BFC95AD28} = {1D54FBEE-A843-4077-A721-BE5E5DB55340}
+		{D206BFFF-EE8E-43FD-AF22-8289A383163E} = {1D54FBEE-A843-4077-A721-BE5E5DB55340}
+		{4063F451-1A7A-499F-B570-F40448F83A1F} = {61E70374-8FC7-4B3D-954D-5E8AA62C68FA}
 	EndGlobalSection
 EndGlobal

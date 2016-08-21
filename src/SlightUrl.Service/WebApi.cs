@@ -1,19 +1,17 @@
 ﻿namespace SlightUrl.Service
 {
     using System.Web.Http;
-    using System.Web.Http.ExceptionHandling;
 
     using SlightUrl.Service.Handers;
 
     public static class WebApi
     {
-        public static HttpConfiguration Configure()
+        public static HttpConfiguration Configuration(HttpConfiguration config = null)
         {
-            var config = new HttpConfiguration();
+            config = config ?? new HttpConfiguration();
 
             config.MapHttpAttributeRoutes();
-
-            config.Services.Add(typeof(IExceptionLogger), new ValidationExceptionHandler());
+            config.Filters.Add(new ValidationExceptionHandler());
 
             return config;
         }

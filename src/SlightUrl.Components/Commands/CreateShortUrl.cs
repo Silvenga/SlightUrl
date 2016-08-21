@@ -1,6 +1,5 @@
 ﻿namespace SlightUrl.Components.Commands
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using System.Threading.Tasks;
@@ -39,7 +38,7 @@
         {
             if (command == null)
             {
-                throw new ArgumentNullException(nameof(command));
+                throw new SlightValidationException("command", "Command must have value.");
             }
 
             var shortenedUrl = new ShortenedLink
